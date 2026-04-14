@@ -1,0 +1,58 @@
+[
+    {
+        "customer": { "name": "Jane Cooper", "phone": "+1 202-555-0143", "address": "4517 Washington Ave. Manchester, Kentucky" },
+        "items": [{ "id": 1, "name": "Mexican Pizza", "price": 18.5, "originalPrice": 28.5, "discountPrice": 18.5, "quantity": 1, "image": "/pizzas-images/pizza-mexican.webp" }],
+        "total": 18.5,
+        "timestamp": "2026-04-10T14:30:00.000Z"
+    },
+    {
+        "customer": { "name": "Cameron Williamson", "phone": "+1 202-555-0168", "address": "3891 Ranchview Dr. Richardson, California" },
+        "items": [{ "id": 2, "name": "Indi Pizza", "price": 18.0, "originalPrice": 18.0, "discountPrice": null, "quantity": 2, "image": "/pizzas-images/pizza-indi.webp" }],
+        "total": 36.0,
+        "timestamp": "2026-04-11T10:15:00.000Z"
+    },
+    {
+        "customer": { "name": "Theresa Webb", "phone": "+1 202-555-0199", "address": "123 Main St. Boston, Massachusetts" },
+        "items": [
+            { "id": 3, "name": "Double Sausage", "price": 22.0, "originalPrice": 25.0, "discountPrice": 22.0, "quantity": 1, "image": "/pizzas-images/pizza-double-sausage.webp" },
+            { "id": 1, "name": "Mexican Pizza", "price": 18.5, "originalPrice": 28.5, "discountPrice": 18.5, "quantity": 1, "image": "/pizzas-images/pizza-mexican.webp" }
+        ],
+        "total": 40.5,
+        "timestamp": "2026-04-12T18:45:00.000Z"
+    },
+    {
+        "customer": { "name": "Robert Fox", "phone": "+1 202-555-0112", "address": "789 Pine Rd. Portland, Oregon" },
+        "items": [{ "id": 4, "name": "Grilled Veal", "price": 15.0, "originalPrice": 15.0, "discountPrice": null, "quantity": 3, "image": "/pizzas-images/pizza-grilled-veal.webp" }],
+        "total": 45.0,
+        "timestamp": "2026-04-13T12:00:00.000Z"
+    },
+    {
+        "customer": { "name": "Esther Howard", "phone": "+1 202-555-0155", "address": "901 Oak St. San Francisco, California" },
+        "items": [{ "id": 1, "name": "Mexican Pizza", "price": 18.5, "originalPrice": 28.5, "discountPrice": 18.5, "quantity": 2, "image": "/pizzas-images/pizza-mexican.webp" }],
+        "total": 37.0,
+        "timestamp": "2026-04-13T15:20:00.000Z"
+    },
+    {
+        "customer": { "name": "Guy Hawkins", "phone": "+1 202-555-0187", "address": "234 Elm Dr. Austin, Texas" },
+        "items": [{ "id": 2, "name": "Indi Pizza", "price": 18.0, "originalPrice": 18.0, "discountPrice": null, "quantity": 1, "image": "/pizzas-images/pizza-indi.webp" }],
+        "total": 18.0,
+        "timestamp": "2026-04-13T16:45:00.000Z"
+    },
+    {
+        "customer": { "name": "Albert Flores", "phone": "+1 202-555-0123", "address": "567 Birch St. Denver, Colorado" },
+        "items": [
+            { "id": 3, "name": "Double Sausage", "price": 22.0, "originalPrice": 25.0, "discountPrice": 22.0, "quantity": 2, "image": "/pizzas-images/pizza-double-sausage.webp" }
+        ],
+        "total": 44.0,
+        "timestamp": "2026-04-13T17:30:00.000Z"
+    },
+    {
+        "customer": { "name": "Bessie Cooper", "phone": "+1 202-555-0144", "address": "890 Maple Ave. Seattle, Washington" },
+        "items": [
+            { "id": 4, "name": "Grilled Veal", "price": 15.0, "originalPrice": 15.0, "discountPrice": null, "quantity": 1, "image": "/pizzas-images/pizza-grilled-veal.webp" },
+            { "id": 2, "name": "Indi Pizza", "price": 18.0, "originalPrice": 18.0, "discountPrice": null, "quantity": 1, "image": "/pizzas-images/pizza-indi.webp" }
+        ],
+        "total": 33.0,
+        "timestamp": "2026-04-13T18:10:00.000Z"
+    }
+]

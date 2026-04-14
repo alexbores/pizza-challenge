@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Mexican green wave",
+    "price": 25.00,
+    "discountPrice": 19.00,
+    "rating": 5.0,
+    "image": "/pizzas-images/pizza-mexican.webp",
+    "description": "A vibrant explosion of Mexican flavors with jalapeños, onions, and crisp capsicum.",
+    "ingredients": ["Tomato", "Mozzarella", "Jalapeños", "Capsicum", "Onions"],
+    "id": 1
+  },
+  {
+    "name": "Indi tandoori paneer",
+    "price": 24.00,
+    "discountPrice": null,
+    "rating": 4.9,
+    "image": "/pizzas-images/pizza-indi.webp",
+    "description": "Authentic tandoori-spiced paneer chunks with spicy red paprika and fresh coriander.",
+    "ingredients": ["Paneer", "Tandoori Sauce", "Red Paprika", "Green Capsicum"],
+    "id": 2
+  },
+  {
+    "name": "Double chicken sausage",
+    "price": 22.00,
+    "discountPrice": 20.00,
+    "rating": 5.0,
+    "image": "/pizzas-images/pizza-double-sausage.webp",
+    "description": "The ultimate treat for poultry lovers, loaded with extra layers of zesty chicken sausage.",
+    "ingredients": ["Chicken Sausage", "Tomato", "Mozzarella", "Herbs"],
+    "id": 3
+  },
+  {
+    "name": "Grilled veal cooked",
+    "price": 20.00,
+    "discountPrice": 16.00,
+    "rating": 4.3,
+    "image": "/pizzas-images/pizza-grilled-veal.webp",
+    "description": "Tender grilled veal strips on a smoky base, perfectly balanced with caramelized onions.",
+    "ingredients": ["Grilled Veal", "Caramelized Onions", "Smoky BBQ Sauce", "Mozzarella"],
+    "id": 4
+  },
+  {
+    "name": "Zesty Garden Delight",
+    "price": 19.00,
+    "discountPrice": 15.00,
+    "rating": 4.7,
+    "image": "/pizzas-images/pizza-mexican.webp",
+    "description": "A refreshing vegetarian treat with lime-infused zucchini, bell peppers, and fresh cilantro.",
+    "ingredients": ["Zucchini", "Bell Peppers", "Mozzarella", "Fresh Cilantro", "Lime Zest"],
+    "id": 5
+  },
+  {
+    "name": "Paneer Tikka Supreme",
+    "price": 26.00,
+    "discountPrice": null,
+    "rating": 5.0,
+    "image": "/pizzas-images/pizza-indi.webp",
+    "description": "Premium smoked paneer marinated in tikka masala, topped with mint chutney drizzle.",
+    "ingredients": ["Smoked Paneer", "Tikka Masala Base", "Marinated Onions", "Mint Chutney"],
+    "id": 6
+  },
+  {
+    "name": "Spicy Pepperoni Blast",
+    "price": 23.00,
+    "discountPrice": 21.00,
+    "rating": 4.8,
+    "image": "/pizzas-images/pizza-double-sausage.webp",
+    "description": "Double-layered spicy pepperoni with a kick of jalapeños and crushed chili flakes.",
+    "ingredients": ["Pepperoni", "Jalapeños", "Chili Flakes", "Mozzarella", "Extra Sauce"],
+    "id": 7
+  },
+  {
+    "name": "BBQ Beef Brisket",
+    "price": 28.00,
+    "discountPrice": 24.00,
+    "rating": 4.9,
+    "image": "/pizzas-images/pizza-grilled-veal.webp",
+    "description": "Slow-cooked savory beef brisket on a robust BBQ sauce base with sweet corn kernels.",
+    "ingredients": ["Beef Brisket", "BBQ Sauce", "Sweet Corn", "Red Onions", "Cheddar"],
+    "id": 8
+  },
+  {
+    "name": "Creamy Garlic Mediterranean",
+    "price": 21.00,
+    "discountPrice": null,
+    "rating": 4.5,
+    "image": "/pizzas-images/pizza-mexican.webp",
+    "description": "A sophisticated white-base pizza featuring roasted garlic, baby spinach, and tangy feta.",
+    "ingredients": ["Roasted Garlic", "Spinach", "Feta Cheese", "Sun-dried Tomatoes", "White Sauce"],
+    "id": 9
+  },
+  {
+    "name": "Hot Curry Fiesta",
+    "price": 24.00,
+    "discountPrice": 19.00,
+    "rating": 4.6,
+    "image": "/pizzas-images/pizza-indi.webp",
+    "description": "A spicy curry-infused sauce base loaded with baby corn, green chilies, and crunchy peppers.",
+    "ingredients": ["Curry Sauce", "Baby Corn", "Green Chilies", "Bell Peppers", "Red Pepper Flakes"],
+    "id": 10
+  }
+]
