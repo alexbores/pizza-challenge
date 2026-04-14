@@ -34,7 +34,6 @@ export function Navbar() {
     const globalDiscount = totalItems >= 3 ? subtotal * 0.1 : 0;
     const totalPrice = subtotal - globalDiscount;
 
-    const totalOriginalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     const handleCheckout = () => {
         setIsOpen(false);

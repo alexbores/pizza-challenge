@@ -18,7 +18,11 @@ function App() {
       
   useEffect(() => {
       if (allPizzas.length === 0) {
-          dispatch(setInitialMenu(pizzasData));
+          const formattedPizzas = pizzasData.map((p: any) => ({
+              ...p,
+              originalPrice: p.price
+          }));
+          dispatch(setInitialMenu(formattedPizzas as any));
       }
   }, [dispatch, allPizzas.length]);
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from  '../app/store';
 import { addItem } from '../features/cart/cartSlice';
@@ -34,7 +34,7 @@ const PizzaCard = ({ pizza }: { pizza: Pizza }) => {
             id: pizza.id,
             name: pizza.name,
             price: pizza.discountPrice ?? pizza.price,
-            discountPrice: pizza.discountPrice,
+            discountPrice: pizza.discountPrice ?? 0,
             originalPrice: pizza.price,
             image: pizza.image,
             quantity: quantity,
