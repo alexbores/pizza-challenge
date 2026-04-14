@@ -22,7 +22,7 @@ describe('Checkout Flow', () => {
         
         const preloadedState = {
             cart: {
-                items: [{ id: 1, name: 'Margherita', price: 10, quantity: 2, image: 'test.jpg', originalPrice: 10 }]
+                items: [{ id: 1, name: 'Margherita', price: 10, discountPrice: 0, originalPrice: 10, quantity: 2, image: 'test.jpg' }]
             }
         };
 

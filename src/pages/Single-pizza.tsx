@@ -8,7 +8,6 @@ import { Navbar } from '../components/Navbar';
 
 // Assets
 import arrowLeft from '../assets/arrow-right.svg'; // Reusing and rotating
-import gradient from '../assets/gradient (2).png';
 
 const SinglePizza = () => {
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ const SinglePizza = () => {
       id: pizza.id,
       name: pizza.name,
       price: pizza.discountPrice ?? pizza.price,
-      discountPrice: pizza.discountPrice,
+      discountPrice: pizza.discountPrice ?? 0,
       originalPrice: pizza.price,
       image: pizza.image,
       quantity: quantity,
