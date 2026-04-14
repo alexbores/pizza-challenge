@@ -18,7 +18,7 @@ export function renderWithProviders(
   ui: React.ReactElement,
   {
     preloadedState = {},
-    store = configureStore({
+    store = (configureStore as any)({
       reducer: {
         menu: menuReducer,
         cart: cartReducer,
