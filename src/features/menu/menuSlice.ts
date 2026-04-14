@@ -15,7 +15,7 @@ export interface Pizza {
 }
 
 interface MenuState {
-    items: Pizza[]; // This is our unified list
+    items: Pizza[];
     customPizzas: Pizza[];
 }
 

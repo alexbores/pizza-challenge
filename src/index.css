@@ -61,7 +61,7 @@
 
 }
 
-/* body */
+
 section {
   @apply flex flex-col items-center justify-center;
   height: auto;
@@ -145,7 +145,7 @@ textarea:focus {
 
 
 
-/* Vertical Quantity Picker */
+
 .qty-holder {
     background-color: var(--color-white);
     border: 1px solid rgba(0,0,0,0.05);

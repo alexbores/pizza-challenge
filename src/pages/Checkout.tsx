@@ -9,12 +9,20 @@ import gradient from '../assets/gradient (2).png';
 
 export function Checkout() {
     const cartItems = useSelector((state: RootState) => state.cart.items);
-    const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    
+    // Total number of pizzas for discount eligibility
+    const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+    // Subtotal (Original price sum)
+    const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    
+    // Global 10% discount if 3+ total pizzas
+    const globalDiscount = totalQuantity >= 3 ? subtotal * 0.1 : 0;
+    const finalTotal = subtotal - globalDiscount;
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isOrdered, setIsOrdered] = useState(false);
-
-    const finalTotal = totalPrice;
 
     const saveOrderToLocal = (order: any) => {
         const existingOrders = JSON.parse(localStorage.getItem('pizza_orders') || '[]');
@@ -24,6 +32,9 @@ export function Checkout() {
 
     
 
+    /**
+     * Primary order submission handler
+     */
     const handlePlaceOrder = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
@@ -42,6 +53,7 @@ export function Checkout() {
         saveOrderToLocal(orderData);
         setIsOrdered(true);
         
+        // Brief success state before redirecting
         setTimeout(() => {
             dispatch(clearCart());
             navigate('/');
@@ -113,7 +125,9 @@ export function Checkout() {
                                                     )}
                                                 </div>
                                             </div>
-                                            <p className="font-bold text-sm">${(item.price * item.quantity).toFixed(2)}</p>
+                                            <p className="font-bold text-sm">
+                                                ${(item.price * item.quantity).toFixed(2)}
+                                            </p>
                                         </div>
                                     ))
                                 )}
@@ -122,9 +136,15 @@ export function Checkout() {
                             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100">
                                 <div className="flex justify-between">
                                     <span className="font-bold text-gray-text">Subtotal</span>
-                                    <span className="text-gray-text text-xs line-through">${totalPrice.toFixed(2)}</span>
+                                    <span className="text-gray-text text-sm">${subtotal.toFixed(2)}</span>
                                 </div>
-                                <div className="flex justify-between text-2xl title-font border-t border-gray-100">
+                                {globalDiscount > 0 && (
+                                    <div className="flex justify-between text-green-600 font-bold">
+                                        <span>Bulk Discount (10%)</span>
+                                        <span>-${globalDiscount.toFixed(2)}</span>
+                                    </div>
+                                )}
+                                <div className="flex justify-between text-2xl title-font border-t border-gray-100 pt-3">
                                     <span>Total</span>
                                     <span className="text-red">${finalTotal.toFixed(2)}</span>
                                 </div>

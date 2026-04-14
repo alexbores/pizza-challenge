@@ -87,14 +87,17 @@ const PizzaCard = ({ pizza }: { pizza: Pizza }) => {
 };
 
 
-// Smart Search Utils
+/**
+ * Smart Search Configuration
+ * Stop words are filtered out to improve matching accuracy and relevance
+ */
 const STOP_WORDS = new Set(['the', 'a', 'an', 'with', 'and', 'or', 'pizza', 'of', 'extra', 'for', 'on', 'in']);
 
 export function Search() {
     const allPizzas = useSelector((state: RootState) => state.menu.items);
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Filtering
+    
     const filteredPizzas = allPizzas.filter(pizza => {
         if (!searchTerm.trim()) return true;
 

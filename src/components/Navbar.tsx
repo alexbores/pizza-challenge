@@ -12,7 +12,9 @@ export function Navbar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // Track scroll position
+    /**
+     * Scroll-aware header management
+     */
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -24,9 +26,15 @@ export function Navbar() {
     
     const cartItems = useSelector((state: RootState) => state.cart.items);
     const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-    const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    
+    // Subtotal (Sum of all items at their listed price)
+    const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    
+    // Global 10% discount if 3 or more total pizzas are in cart
+    const globalDiscount = totalItems >= 3 ? subtotal * 0.1 : 0;
+    const totalPrice = subtotal - globalDiscount;
 
-    const totalOriginalPrice = cartItems.reduce((acc, item) => acc + (item.originalPrice * item.quantity), 0);
+    const totalOriginalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     const handleCheckout = () => {
         setIsOpen(false);
@@ -100,7 +108,7 @@ export function Navbar() {
                                 <div className="flex flex-row items-center gap-2">
                                     <p className="text-red font-bold text-sm">${item.price.toFixed(2)}</p>
                                     {item.originalPrice > item.price && (
-                                        <span className="text-gray text-xs line-through">${item.originalPrice.toFixed(2)}</span>
+                                        <span className="text-gray-300 text-xs line-through">${item.originalPrice.toFixed(2)}</span>
                                     )}
                                 </div>
                             </div>
@@ -126,19 +134,23 @@ export function Navbar() {
                 )}
              </div>
 
-             <div className="w-full bottom-bar flex flex-col gap-4">
-                {totalOriginalPrice > totalPrice && (
-                    <div className="flex flex-row justify-between w-full border-t border-gray-100 pt-4">
-                        <span className="font-bold title-font text-md text-gray-text">Original Total</span>
-                        <span className="font-bold title-font text-md text-black line-through">${totalOriginalPrice.toFixed(2)}</span>
+              <div className="w-full bottom-bar flex flex-col gap-2">
+                <div className="flex flex-row justify-between w-full border-t border-gray-100 pt-4">
+                    <span className="font-bold title-font text-md text-gray-text">Subtotal</span>
+                    <span className="font-bold title-font text-md text-black">${subtotal.toFixed(2)}</span>
+                </div>
+                {globalDiscount > 0 && (
+                     <div className="flex flex-row justify-between w-full text-green-600">
+                        <span className="font-bold title-font text-sm">Bulk Discount (10%)</span>
+                        <span className="font-bold title-font text-sm">-${globalDiscount.toFixed(2)}</span>
                     </div>
-                )} 
-                <div className="flex flex-row justify-between w-full border-t border-gray-100">
+                )}
+                <div className="flex flex-row justify-between w-full border-t border-gray-100 pt-2">
                     <span className="font-bold title-font text-lg">Total</span>
                     <span className="font-bold title-font text-lg text-red">${totalPrice.toFixed(2)}</span>
                 </div>
-                <button className="button w-full py-4 text-lg" onClick={handleCheckout}>Proceed to Checkout</button>
-             </div>
+                <button className="button w-full py-4 text-lg mt-2" onClick={handleCheckout}>Proceed to Checkout</button>
+              </div>
         </div>
       </>  
     );

@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { Navbar } from '../components/Navbar';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -99,6 +98,9 @@ function Home() {
 
     const [swiper, setSwiper] = useState<any>(null);
 
+    /**
+     * Programmatic slide navigation with loop-awareness
+     */
     function slideTo(index: number) {
         if (swiper) swiper.slideToLoop(index);
     }

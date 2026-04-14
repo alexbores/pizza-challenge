@@ -5,7 +5,6 @@ import type { Pizza } from '../features/menu/menuSlice';
 import type { RootState } from '../app/store';
 import { Navbar } from '../components/Navbar';
 
-// Chart.js imports
 import { 
     Chart as ChartJS, 
     CategoryScale, 
@@ -29,7 +28,6 @@ ChartJS.register(
     ArcElement
 );
 
-// Import initial data
 import initialOrders from '../assets/data/orders.json';
 
 const PREDEFINED_IMAGES = [
@@ -54,7 +52,10 @@ export function Management() {
         image: PREDEFINED_IMAGES[0].url,
     });
 
-    // Load and Unify Orders
+    /**
+     * Synchronize local storage orders with static history
+     * Sorts descending by timestamp for recent-first display
+     */
     useEffect(() => {
         const localOrders = JSON.parse(localStorage.getItem('pizza_orders') || '[]');
         const combined = [...localOrders, ...initialOrders].sort((a, b) => 
@@ -97,7 +98,11 @@ export function Management() {
         return sorted[0]?.[0] || 'None';
     })();
 
-    // Aggregated Sales Data for Charts
+    /**
+     * Aggregation engine for analytics charts
+     * Decouples sales data from current menu availability to ensure 
+     * accurate historical tracking.
+     */
     const salesStats = (() => {
         const stats: Record<string, { quantity: number; revenue: number }> = {};
         orders.forEach(order => {
